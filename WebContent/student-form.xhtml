@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<h:head>
+  <title>User - Input Form</title>
+</h:head>
+
+<h:body>
+     <h:form>                                      <!-- student.setFirstName -->
+       First Name: <h:inputText id="firstName" value="#{student.firstName}"
+                     a:placeholder="" /><br/><br/>
+                     
+                     
+       Last Name: <h:inputText id="lastName" value="#{student.lastName}"
+                     a:placeholder="" />   <br/><br/>  
+                     
+                   
+       Country: <h:selectOneMenu value="#{student.country}">
+       
+                       <f:selectItems value="#{student.countryOptions}"/>
+       
+                </h:selectOneMenu><br/><br/>
+       
+       <!--         OR     
+       
+       <h:selectOneMenu values="#{student.country}">
+       
+                        <f:selectItem itemValue="Brazil" itemLabel="Brazil"/>
+                        <f:selectItem itemValue="France" itemLabel="France"/>
+                        <f:selectItem itemValue="India" itemLabel="India"/>
+                        <f:selectItem itemValue="Japan" itemLabel="Japan"/>
+                        <f:selectItem itemValue="Africa" itemLabel="Africa"/>
+                        <f:selectItem itemValue="Russia" itemLabel="Russia"/>
+       
+                </h:selectOneMenu>  -->  
+                
+                
+        Favorite Language: <h:selectOneRadio value="#{student.favouriteLanguage}">
+        
+        <f:selectItem itemValue="Java" itemLabel="Java"/>
+        <f:selectItem itemValue="Python" itemLabel="Python"/>
+        <f:selectItem itemValue="Ruby" itemLabel="Ruby"/>
+        <f:selectItem itemValue="C++" itemLabel="C++"/>
+        <f:selectItem itemValue="C#" itemLabel="C#"/>
+       
+        </h:selectOneRadio>
+       
+       <br/>
+       
+       Select your skills:
+       <h:selectManyCheckbox value="#{student.skills}">
+       
+       <f:selectItem itemValue="Spring" itemLabel="Spring"/>
+       <f:selectItem itemValue="Django" itemLabel="Django"/>
+       <f:selectItem itemValue="Nodejs" itemLabel="Nodejs"/>
+       <f:selectItem itemValue="JSF" itemLabel="JSF"/>
+       
+       </h:selectManyCheckbox>
+       
+       <br/>               
+                             
+        <h:commandButton value="Submit" action="student_response"/>
+     </h:form>
+
+</h:body>
+
+</html>
